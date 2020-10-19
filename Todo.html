@@ -54,24 +54,24 @@
     }
     document.getElementById('add').onclick = function(){
 
-        var node=document.createElement("Li");
-        var text = document.getElementById('idea').value;
+        const node=document.createElement("Li");
+        const text = document.getElementById('idea').value;
         if(text.length < 10){
             alert("Atleast should have 10 Characters")
             return false
             
         }
-        var textnode = document.createTextNode(text );
+        const textnode = document.createTextNode(text );
         node.appendChild(textnode);
         
         document.getElementById('list').appendChild(node)
 
         {
-            var node=document.createElement('Li')
-        var today=new Date().toDateString().split(' ')[1]
-        var date=new Date().toDateString().split(' ')[2]
-        var format= date + " " + today
-        var textnode = document.createTextNode(format)
+            const node=document.createElement('Li')
+        const today=new Date().toDateString().split(' ')[1]
+        const date=new Date().toDateString().split(' ')[2]
+        const format= date + " " + today
+        const textnode = document.createTextNode(format)
         node.appendChild(textnode)
         document.getElementById('date').appendChild(node)
 
@@ -79,8 +79,8 @@
         
     }
     function removeItem(){
-        var itemToRemove = document.getElementById('list');
-        var DateRemove = document.getElementById('date');
+        const  itemToRemove = document.getElementById('list');
+        const DateRemove = document.getElementById('date');
         itemToRemove.removeChild(itemToRemove.childNodes[0])
         DateRemove.removeChild(DateRemove.childNodes[0])
         
