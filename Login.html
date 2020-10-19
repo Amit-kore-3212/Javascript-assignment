@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script type = "text/javascript">
+        function validate(){
+            let username=document.myForm.username.value
+            let password=document.myForm.password.value
+
+            if(username == ''){
+                alert("Please provide username")
+                
+                document.getElementById('username').style.borderColor = "red"
+               
+                return false
+            }else if(password.length < 6){
+                alert("password should have atleast 6 characters")
+                document.getElementById('password').style.borderColor = "red"
+                return false
+                
+            }
+            
+        
+         localStorage.setItem('username',username)
+         localStorage.setItem('password',password)
+
+    
+  
+           
+        }
+        function persisting(){
+    document.getElementById('username').value = localStorage.getItem('username')
+    document.getElementById('password').value = localStorage.getItem('password')
+  }
+        
+         </script>
+    </head>
+    <body onload="persisting()">
+        <div class="container">
+       <form name="myForm" onSubmit="return validate()" action="./Todo.html">
+        <div class="username"> <label>Username : </label>
+            <input type="text" id="username" name="username"/></div><br/>
+            <div class="password">    <label>Password :</label>
+                <input type="password" id="password"  name="password"/></div>   <br/>
+          
+          <div class="submit">   <input type="submit"  value="Login"/></div>
+        
+
+       </form>
+    </div>
+    </body>
+</html>

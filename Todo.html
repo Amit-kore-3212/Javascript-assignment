@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>To do page</title>
+        <link rel="stylesheet" href="style.css">
+       
+        
+    </head>
+  <body onload="getUserName()">
+    <div div="container1">
+    <div class="name">
+        <div class="TodoUsername">   <label>Hello -
+  
+            <span id="username"></span></label></div>
+ 
+
+    <br/>
+    <br/>
+   
+   
+ 
+
+<input class="input" type="text" id="idea" onfocus="this.value=''"/>
+
+<input class="submit1" type="button" id="add" value="Add New"/>
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <table class="table">
+      
+        <tbody>
+            <tr class="tableInfo" ondblclick ="removeItem()"  >
+                <td  style="border: 1px solid white;" ><ol id="list"></ol></td>
+                <td  style=" border: 1px solid white;" ><ol style="list-style-type: none; padding-top: 2px;font-size: 15px;" id="date"></ol></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+ 
+
+   
+  </body>
+</html>
+<script type="text/javascript">
+    function getUserName(){
+        username=localStorage.getItem('username')
+    console.log(username)
+     var name=document.getElementById('username')
+     name.innerHTML=username
+
+    }
+    document.getElementById('add').onclick = function(){
+
+        var node=document.createElement("Li");
+        var text = document.getElementById('idea').value;
+        if(text.length < 10){
+            alert("Atleast should have 10 Characters")
+            return false
+            
+        }
+        var textnode = document.createTextNode(text );
+        node.appendChild(textnode);
+        
+        document.getElementById('list').appendChild(node)
+
+        {
+            var node=document.createElement('Li')
+        var today=new Date().toDateString().split(' ')[1]
+        var date=new Date().toDateString().split(' ')[2]
+        var format= date + " " + today
+        var textnode = document.createTextNode(format)
+        node.appendChild(textnode)
+        document.getElementById('date').appendChild(node)
+
+        }
+        
+    }
+    function removeItem(){
+        var itemToRemove = document.getElementById('list');
+        var DateRemove = document.getElementById('date');
+        itemToRemove.removeChild(itemToRemove.childNodes[0])
+        DateRemove.removeChild(DateRemove.childNodes[0])
+        
+    }
+  
+   
+</script>
+
+    
+        
+        
+     
+   
+        
+ 
