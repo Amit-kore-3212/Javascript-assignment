@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>ToDo Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="getUserName()">
+        <div class="container1">
+            <div class="name">
+                <div class="TodoUsername">
+
+                    <label>Hello  :  <span id="user"></span></label>
+                </div>
+
+     
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+
+
+     <input class="input" type="text" id="todo" onfocus="this.value=''"/>
+     <button class="submit1" onclick="addTodo()">Add</button>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <table class="table">
+      
+        <tbody>
+            <tr class="tableInfo" ondblclick ="removeItem()"  >
+                <td  style="border: 1px solid white;" ><ol id="list"></ol></td>
+                <td  style=" border: 1px solid white;" ><ol style="list-style-type: none; padding-top: 2px;font-size: 15px;" id="date"></ol></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+       <script src="./Todo.js"></script>
+    </div>
+</div>
+    </body>
+</html>
